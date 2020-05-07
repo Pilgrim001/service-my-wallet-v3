@@ -1,7 +1,7 @@
 'use strict';
 
 try {
-  require('node-env-file')('.env');
+  require('dotenv').config({path:'.env'});
 } catch (e) {
   console.log(e);
 } finally {
