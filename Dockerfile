@@ -11,7 +11,9 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install production dependencies.
-RUN npm install --no-optional
+RUN npm install --force 
+RUN npm install -g loadash
+RUN npm audit fix --force
 
 # Copy local code to the container image.
 COPY . ./
